@@ -1,0 +1,40 @@
+{
+  "equipes": {
+    "cco": {
+      "nome": "Centro de Controle Operacional (CCO)",
+      "email": "",
+      "prazo_minutos": {"critica": 2, "alta": 5, "media": 15, "baixa": 60}
+    },
+    "resgate": {
+      "nome": "Resgate e atendimento médico",
+      "email": "",
+      "prazo_minutos": {"critica": 2, "alta": 5, "media": 15, "baixa": 30}
+    },
+    "guincho": {
+      "nome": "Socorro mecânico (guincho)",
+      "email": "",
+      "prazo_minutos": {"critica": 10, "alta": 15, "media": 30, "baixa": 60}
+    },
+    "inspecao": {
+      "nome": "Inspeção de tráfego (remoção de objetos e animais)",
+      "email": "",
+      "prazo_minutos": {"critica": 5, "alta": 10, "media": 30, "baixa": 120}
+    },
+    "conservacao": {
+      "nome": "Conservação da via (pavimento, sinalização, iluminação)",
+      "email": "",
+      "prazo_minutos": {"critica": 60, "alta": 240, "media": 1440, "baixa": 4320}
+    },
+    "ouvidoria": {
+      "nome": "Ouvidoria e atendimento ao usuário",
+      "email": "",
+      "prazo_minutos": {"critica": 240, "alta": 1440, "media": 2880, "baixa": 7200}
+    },
+    "triagem": {
+      "nome": "Supervisor do CCO (triagem manual)",
+      "email": "",
+      "prazo_minutos": {"critica": 2, "alta": 5, "media": 15, "baixa": 30}
+    }
+  },
+  "confianca_minima": 0.6
+}

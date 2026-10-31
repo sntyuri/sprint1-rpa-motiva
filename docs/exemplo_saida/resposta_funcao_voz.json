@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "protocolo": "OC-20261030-0013",
+  "categoria": "acidente",
+  "severidade": "critica",
+  "equipes_acionadas": [
+    "cco",
+    "resgate",
+    "guincho"
+  ],
+  "status": "encaminhada",
+  "atender_ate": "30/10/2026 21:25",
+  "perguntas_pendentes": [
+    "quilômetro",
+    "sentido da pista",
+    "se a pista está bloqueada",
+    "se há outras vítimas (ocupantes do carro)",
+    "nome do solicitante",
+    "ponto de referência"
+  ],
+  "fala_sugerida": "Já acionei o Centro de Controle, o resgate e o guincho. Se puder, fique em local seguro, longe da pista. Sua ocorrência é a de número 13 de hoje."
+}
