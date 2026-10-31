@@ -57,22 +57,22 @@ O mesmo e-mail ou a mesma linha de planilha nunca gera dois registros: cada soli
 
 Usamos o **Claude Opus 5.5** (`claude-opus-5-5`) pela API da Anthropic, com esforço baixo, porque classificar uma mensagem curta não precisa de raciocínio longo.
 
-**O que ela devolve.** A resposta é presa a um JSON Schema (*structured outputs*), então o robô sempre recebe os mesmos campos, mesmo quando o relato é bagunçado ou cheio de erros de digitação:
+A resposta é presa a um JSON Schema (*structured outputs*), então o robô sempre recebe os mesmos campos, mesmo quando o relato é bagunçado ou cheio de erros de digitação:
 
 - categoria (acidente, veículo avariado, objeto na pista, animal na pista, pedestre na pista, problema na via, evento ambiental, atendimento ao usuário, não é ocorrência) e um subtipo em texto livre;
 - severidade (crítica, alta, média, baixa) e se há risco à vida;
 - local (rodovia, km, sentido, referência), veículos envolvidos, vítimas, se a pista está bloqueada;
 - nome, telefone e e-mail de quem relatou;
-- **informações faltantes**: o que a equipe precisa confirmar com quem relatou ("quilômetro exato", "se há vítimas");
-- **confiança** de 0 a 1 e uma justificativa de uma frase.
+- informações faltantes, ou seja, o que a equipe precisa confirmar com quem relatou ("quilômetro exato", "se há vítimas");
+- confiança de 0 a 1 e uma justificativa de uma frase.
 
 O prompt ([`motiva_rpa/ia.py`](motiva_rpa/ia.py)) define o critério de cada severidade e proíbe inventar dados: campo que não está na mensagem fica vazio.
 
-**Onde a IA não decide.** Quem escolhe a equipe é uma tabela de regras sobre os campos extraídos, não o modelo. Assim a operação consegue ler e mudar o roteamento sem mexer em prompt, e o mesmo tipo de ocorrência sempre vai para o mesmo lugar.
+A IA não escolhe a equipe. Isso fica com uma tabela de regras sobre os campos extraídos. Assim a operação consegue ler e mudar o roteamento sem mexer em prompt, e o mesmo tipo de ocorrência sempre vai para o mesmo lugar.
 
-**Human-in-the-Loop.** Se a confiança ficar abaixo de 60% ou a IA achar que a mensagem não é uma ocorrência, o caso vai para o supervisor do CCO com o aviso "confirme a classificação antes de despachar". Se a API estiver fora do ar, a solicitação é gravada assim mesmo, com status `aguardando_triagem`, e não se perde.
+Quando a confiança fica abaixo de 60% ou a IA achar que a mensagem não é uma ocorrência, o caso vai para o supervisor do CCO com o aviso "confirme a classificação antes de despachar" (é o Human-in-the-Loop do projeto). Se a API estiver fora do ar, a solicitação é gravada assim mesmo, com status `aguardando_triagem`, e não se perde.
 
-**Fallback do modelo.** Ligamos o *server-side fallback* da API: se o modelo recusar uma mensagem por política de segurança, a própria API repete o pedido em outro modelo.
+Também ligamos o *server-side fallback* da API: se o modelo recusar uma mensagem por política de segurança, a própria API repete o pedido em outro modelo.
 
 ### Resultado nos nossos testes
 
@@ -157,8 +157,8 @@ python -m motiva_rpa consultar OC-20261030-0001
 
 Todo aviso é salvo como e-mail (`.eml`) em `saida/encaminhamentos/<equipe>/`, e dá para abrir no Outlook ou em qualquer leitor de e-mail. Dois exemplos estão em [`docs/exemplo_saida/`](docs/exemplo_saida/). Para enviar de verdade, há duas opções no `.env`:
 
-- **E-mail:** preencha `SMTP_HOST`, `SMTP_USUARIO` e `SMTP_SENHA` (no Gmail, use `smtp.gmail.com` e uma senha de app) e o e-mail de cada equipe em `config/responsaveis.json`.
-- **Webhook:** cole em `WEBHOOK_URL` o endereço de webhook de um canal do Discord, Teams ou Slack.
+- E-mail: preencha `SMTP_HOST`, `SMTP_USUARIO` e `SMTP_SENHA` (no Gmail, use `smtp.gmail.com` e uma senha de app) e o e-mail de cada equipe em `config/responsaveis.json`.
+- Webhook: cole em `WEBHOOK_URL` o endereço de webhook de um canal do Discord, Teams ou Slack.
 
 Se um envio falhar, os outros seguem, e a falha fica registrada na aba `encaminhamentos` da planilha exportada.
 
@@ -187,4 +187,5 @@ docs/              processo antes/depois, roteiro do vídeo e exemplos de saída
 tests/             testes automatizados
 entrada/           pasta monitorada (planilhas novas)
 saida/             registro exportado e avisos gerados
+video/             animação do vídeo de demonstração, feita com Remotion
 ```

@@ -23,7 +23,7 @@ flowchart TD
     H --> I([Equipe recebe a informação])
 ```
 
-**Problemas que vemos nesse fluxo:**
+Os problemas que vemos nesse fluxo:
 
 | Problema | Consequência |
 |---|---|
@@ -52,7 +52,7 @@ flowchart TD
     IA -. falha da API .-> MAN[Registrada mesmo assim, para triagem manual]
 ```
 
-**O que muda:**
+O que muda com o robô:
 
 | Antes | Depois |
 |---|---|
@@ -62,11 +62,7 @@ flowchart TD
 | Dado faltando gera retrabalho. | O aviso já diz o que a equipe precisa confirmar com o solicitante. |
 | Planilha processada no fim do turno. | Cada linha vira uma ocorrência assim que o arquivo aparece. |
 
-**Onde o humano continua decidindo:**
-
-- **Baixa confiança:** quando a IA não tem certeza (confiança abaixo de 60%) ou a mensagem não parece uma ocorrência, o caso vai primeiro para o supervisor, com o aviso "confirme a classificação antes de despachar".
-- **Falha da API:** se a IA ficar fora do ar, a solicitação é registrada assim mesmo, com status `aguardando_triagem`. Nada se perde.
-- **Regras auditáveis:** quem decide qual equipe atende é a tabela de regras (`config/responsaveis.json` e `motiva_rpa/encaminhamento.py`), não o modelo. Assim a operação consegue auditar e ajustar o roteamento sem mexer na IA.
+O humano continua decidindo em três pontos. Quando a IA não tem certeza (confiança abaixo de 60%) ou a mensagem não parece uma ocorrência, o caso vai primeiro para o supervisor, com o aviso "confirme a classificação antes de despachar". Se a IA ficar fora do ar, a solicitação é registrada assim mesmo, com status `aguardando_triagem`. Nada se perde. E quem decide qual equipe atende é a tabela de regras (`config/responsaveis.json` e `motiva_rpa/encaminhamento.py`), não o modelo. Assim a operação consegue auditar e ajustar o roteamento sem mexer na IA.
 
 ## Tabela de encaminhamento
 

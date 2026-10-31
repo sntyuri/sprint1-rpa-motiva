@@ -1,12 +1,8 @@
-# Roteiro de narração do vídeo
+# Roteiro do vídeo de demonstração
 
-Leia no seu ritmo, como se estivesse explicando para um colega. Não precisa ser palavra por palavra: se sair de outro jeito, tudo bem.
+Vídeo: https://youtu.be/pKQFYamSKoI
 
-Entre um bloco e outro, faça uma pausa de uns **2 segundos** em silêncio. É por essas pausas que o vídeo é ajustado à sua voz. Se errar, pare e repita a frase inteira; depois a gente corta.
-
-Grave tudo de uma vez num arquivo só (mp3, m4a ou wav, pode ser pelo celular), num lugar sem eco.
-
----
+Texto base da narração, cena por cena. Na gravação algumas falas saíram com outras palavras.
 
 **1 · Abertura**
 
