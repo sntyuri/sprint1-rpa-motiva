@@ -15,7 +15,7 @@ Automatizamos o caminho das ocorrências que chegam por escrito ao Centro de Con
 | Registro estruturado e encaminhamento automático ao responsável | [`motiva_rpa/registro.py`](motiva_rpa/registro.py), [`motiva_rpa/encaminhamento.py`](motiva_rpa/encaminhamento.py), [`config/responsaveis.json`](config/responsaveis.json) |
 | Função que o agente de voz possa chamar | [`motiva_rpa/voz.py`](motiva_rpa/voz.py) |
 | Desenho do processo antes e depois | [`docs/processo.md`](docs/processo.md) |
-| Vídeo curto da demonstração | link: *(colocar aqui o link do vídeo)* · roteiro em [`docs/roteiro_video.md`](docs/roteiro_video.md) |
+| Vídeo curto da demonstração | https://youtu.be/pKQFYamSKoI · roteiro em [`docs/roteiro_video.md`](docs/roteiro_video.md) |
 
 ## O processo
 
