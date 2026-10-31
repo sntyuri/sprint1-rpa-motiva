@@ -2,6 +2,12 @@
 
 **RPA · Sprint 1: receber, entender e encaminhar**
 
+## ▶ Vídeo da demonstração: [youtu.be/pKQFYamSKoI](https://youtu.be/pKQFYamSKoI)
+
+[![Assista ao vídeo da demonstração no YouTube](https://img.youtube.com/vi/pKQFYamSKoI/maxresdefault.jpg)](https://youtu.be/pKQFYamSKoI)
+
+*Clique na imagem para assistir (3 min). O arquivo do vídeo também está no zip da entrega, em `video/demo_robo_triagem.mp4`.*
+
 Automatizamos o caminho das ocorrências que chegam por escrito ao Centro de Controle Operacional (CCO) de uma concessionária de rodovias (Motiva). Um relato chega por e-mail ou numa planilha. O robô captura, o Claude lê o texto e extrai os dados (o que aconteceu, onde, gravidade, vítimas, contato), o sistema grava com protocolo e avisa as equipes certas com prazo de atendimento. Deixamos pronta também a função que o agente de voz vai chamar nas próximas sprints.
 
 **Grupo:** Gabriel Muniz (568237), Leonardo Barros (566788), Marcelo Augusto (567176), Rafael Tavares (567357), Yuri Quirino (568512)
